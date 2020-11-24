@@ -115,7 +115,7 @@ throttle-limit = 3
 
 [module/date]
 type = internal/date
-date =    %Y-%m-%d %H:%M
+date =    %Y-%m-%d %H:%M
 ; date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 ; date-detailed = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 
@@ -397,8 +397,8 @@ label-close = 
 label-separator = " "
 
 menu-0-0 = US
-menu-0-0-foreground = #fba922
+menu-0-0-foreground = #00C1FF
 menu-0-0-exec = setxkbmap -layout us
 menu-0-1 = Intl
-menu-0-1-foreground = #fba922
+menu-0-1-foreground = #00C1FF
 menu-0-1-exec = setxkbmap -layout us -variant intl

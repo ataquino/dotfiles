@@ -108,12 +108,12 @@ endif
 " Extensions
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+"  \ 'coc-pairs',
 
 " Prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -184,7 +184,7 @@ function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 

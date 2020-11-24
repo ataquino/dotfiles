@@ -182,9 +182,25 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-for_window [class=".*"] border pixel 0
+# for_window [class=".*"] border pixel 0
 
+# Window borders
 gaps inner 10
-gaps outer -10
-
+# gaps outer -6
+new_window 1pixel
 smart_borders on
+
+# Color settings
+client.focused #00C1FF #00C1FF #000088 #00C1FF
+client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.unfocused #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.urgent #00C1FF #00C1FF #000088 #00C1FF
+
+# Do not follow the mouse
+focus_follows_mouse no
+
+# Area selection screenshot
+bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1` && rm -rf ~/Pictures/screenshots'
+
+bindsym button8 workspace prev
+bindsym button9 workspace next
